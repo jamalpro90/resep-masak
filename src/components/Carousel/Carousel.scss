@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.caro-wrapper {
+  max-width: 60vw;
+  margin: 7rem auto;
+
+  .slider-wrapper {
+    position: relative !important;
+    aspect-ratio: 16/9;
+    border-radius: 7px !important;
+
+    // Caption
+    .legend {
+      position: absolute !important;
+      z-index: 3 !important;
+      height: 30px;
+      width: 300px;
+      top: 55% !important;
+      left: 50% !important;
+      font-size: 3rem !important;
+      background: none !important;
+      font-weight: bold;
+      text-shadow: $text-shadow;
+    }
+  }
+}
