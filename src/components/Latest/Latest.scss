@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.la-wrapper {
+  padding: $container;
+  margin-bottom: 30rem;
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .recipes {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}

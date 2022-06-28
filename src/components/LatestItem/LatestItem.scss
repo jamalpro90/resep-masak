@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.recipe {
+  // width: 30%;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 5px 0;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      color: $purple;
+    }
+    .text-icon {
+      margin-right: 10px;
+    }
+  }
+
+  .text {
+    margin-top: 10px;
+  }
+}
