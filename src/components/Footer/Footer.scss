@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+
+footer {
+  background: #222;
+  color: white;
+
+  .footer-top {
+    padding: $container;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .footer-item {
+      h3 {
+        font-size: 24px;
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 10px 0;
+        color: $gray;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      .icons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        a .icon {
+          width: 5px;
+          height: 5px;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+}
