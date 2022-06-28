@@ -1,0 +1,39 @@
+.category-item {
+  width: auto;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  // z-index: 100;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    filter: brightness(100%);
+    transition: 0.5s;
+  }
+
+  p {
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    img {
+      filter: brightness(50%);
+    }
+
+    p {
+      opacity: 1;
+      top: 50%;
+    }
+  }
+}

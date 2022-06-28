@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.la-wrapper {
+.ca-wrapper {
   padding: $container;
   margin-bottom: 7rem;
 
@@ -9,10 +9,10 @@
     font-size: 3rem;
   }
 
-  .recipes {
+  .categories {
     margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1rem;
   }
 }
