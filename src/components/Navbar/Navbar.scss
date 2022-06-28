@@ -1,0 +1,89 @@
+@import '../../styles/variables.scss';
+
+nav {
+  height: 70px;
+  background: $back-gradient;
+  color: white;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .brand {
+    h3 {
+      font-size: 3rem;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2rem;
+
+    li {
+      list-style: none;
+      font-size: 18px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .src-box-login {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .src-box {
+      width: 300px;
+      height: 40px;
+      border-radius: 30px;
+      background-color: $gray;
+      overflow: hidden;
+      position: relative;
+
+      input {
+        width: 80%;
+        height: 100%;
+        background: white;
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        font-size: 16px;
+        // font-weight: bolder;
+      }
+
+      .src-icon {
+        position: absolute;
+        right: 7px;
+        top: 5px;
+        width: 30px;
+        height: 30px;
+        color: blue;
+        z-index: 3;
+        // -webkit-transform: scaleX(-1);
+        // transform: scaleX(-1);
+        cursor: pointer;
+      }
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #222;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      cursor: pointer;
+
+      &:hover {
+        background: $orange;
+        color: #111;
+      }
+    }
+  }
+}
