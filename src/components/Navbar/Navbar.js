@@ -1,12 +1,27 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import './Navbar.scss';
 import { SearchIcon, MenuIcon, XIcon } from '@heroicons/react/solid';
 import Button from '../Button/Button';
 import { modalContext } from '../../utils/Context';
+import { signOut } from 'firebase/auth';
+import { toast } from 'react-toastify';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../utils/Firebase';
 
 const Header = () => {
   const openModal = useContext(modalContext);
   const navMobileRef = useRef(null);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        // User is signed out
+      }
+    });
+  }, []);
 
   const handleOpenMenu = () => {
     navMobileRef.current.style.right = '0';
@@ -14,6 +29,24 @@ const Header = () => {
 
   const handleCloseMenu = () => {
     navMobileRef.current.style.right = '-40vw';
+  };
+
+  const handleLogin = () => {
+    openModal.dispatch({ type: 'open-login' });
+    navMobileRef.current.style.right = '-40vw';
+  };
+
+  const handleLogout = () => {
+    // eslint-disable-next-line no-undef
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        navMobileRef.current.style.right = '-40vw';
+        location.reload();
+      })
+      .catch((err) => {
+        toast(err.message);
+      });
   };
 
   return (
@@ -39,11 +72,16 @@ const Header = () => {
         <li>Favorit</li>
         <li>Produk</li>
         <li>Artikel</li>
-        <Button
-          type="button"
-          text="Masuk"
-          onClick={() => openModal.dispatch({ type: 'open-login' })}
-        />
+        {user ? (
+          <div style={{ textAlign: 'center' }}>
+            <Button type="button" text="Keluar" onClick={handleLogout} />
+            <br />
+            <br />
+            <span style={{ marginRight: 10 }}>{user.email}</span>
+          </div>
+        ) : (
+          <Button type="button" text="Masuk" onClick={handleLogin} />
+        )}
       </div>
 
       {/* Nav List */}
@@ -61,11 +99,14 @@ const Header = () => {
           <SearchIcon className="src-icon" />
         </div>
 
-        <Button
-          type="button"
-          text="Masuk"
-          onClick={() => openModal.dispatch({ type: 'open-login' })}
-        />
+        {user ? (
+          <div>
+            <span style={{ marginRight: 10 }}>{user.email}</span>
+            <Button type="button" text="Keluar" onClick={handleLogout} />
+          </div>
+        ) : (
+          <Button type="button" text="Masuk" onClick={handleLogin} />
+        )}
       </div>
     </nav>
   );

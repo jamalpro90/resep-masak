@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-vars */
-import './styles/App.scss';
-import Header from './components/Navbar/Navbar';
+import { useContext } from 'react';
+import { ToastContainer } from 'react-toastify';
 import Carousel from './components/Carousel/Carousel';
-import Latest from './components/Latest/Latest';
 import Category from './components/Category/Category';
 import Footer from './components/Footer/Footer';
+import Latest from './components/Latest/Latest';
 import LoginModal from './components/LoginModal/LoginModal';
-import { modalContext } from './utils/Context';
-import { useContext } from 'react';
+import Navbar from './components/Navbar/Navbar';
 import RegisterModal from './components/RegisterModal/RegisterModal';
+import './styles/App.scss';
+import { modalContext } from './utils/Context';
 
 function App() {
   const openModal = useContext(modalContext);
@@ -17,11 +17,13 @@ function App() {
     <div className="App">
       {openModal.state.loginModal && <LoginModal />}
       {openModal.state.registerModal && <RegisterModal />}
-      <Header />
+      <Navbar />
       <Carousel />
       <Latest />
       <Category />
       <Footer />
+
+      <ToastContainer />
     </div>
   );
 }
