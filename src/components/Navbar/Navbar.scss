@@ -1,18 +1,25 @@
 @import '../../styles/variables.scss';
 
 nav {
-  height: 70px;
   background: $back-gradient;
   color: white;
   padding: $container;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
+
+  .src-box-mobile {
+    display: none;
+  }
 
   .brand {
     h3 {
@@ -58,37 +65,178 @@ nav {
         outline: none;
         padding-left: 20px;
         font-size: 16px;
-        // font-weight: bolder;
       }
+    }
+  }
 
-      .src-icon {
+  .src-icon {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    color: blue;
+    z-index: 3;
+    // -webkit-transform: scaleX(-1);
+    // transform: scaleX(-1);
+    cursor: pointer;
+  }
+
+  button {
+    padding: 10px 15px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover {
+      background: $orange;
+      color: #111;
+    }
+  }
+
+  .ham-icon {
+    display: none;
+  }
+
+  .nav-list-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    padding: $container-mobile;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .brand {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    .nav-list {
+      display: none;
+    }
+
+    .src-box-login {
+      display: none;
+    }
+
+    .src-box-mobile {
+      display: inline-flex;
+      width: 300px;
+      max-width: 100%;
+      height: 40px;
+      border-radius: 30px;
+      background-color: $gray;
+      overflow: hidden;
+      position: relative;
+
+      input {
+        width: 80%;
+        height: 100%;
+        background: white;
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        font-size: 16px;
+      }
+    }
+
+    .src-icon {
+      width: 25px;
+      height: 25px;
+      right: 10px;
+      top: 7px;
+    }
+
+    .ham-icon {
+      display: inline-flex;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .nav-list-mobile {
+      position: absolute;
+      padding-top: 5rem;
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      width: 40vw;
+      height: 100vh;
+      top: 0;
+      right: -40vw;
+      background: $purple;
+      z-index: 99;
+      transition: 0.5s;
+      // transform: translateX(100%);
+
+      .x-icon {
         position: absolute;
-        right: 7px;
-        top: 5px;
         width: 30px;
         height: 30px;
-        color: blue;
-        z-index: 3;
-        // -webkit-transform: scaleX(-1);
-        // transform: scaleX(-1);
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+
+      li {
+        list-style: none;
+        font-size: 18px;
         cursor: pointer;
       }
     }
 
-    button {
-      padding: 10px 15px;
-      background: #222;
-      color: white;
-      border-radius: 10px;
-      border: none;
-      font-size: 16px;
-      font-weight: 400;
-      cursor: pointer;
+    .show {
+      transform: translateX(-150%);
+    }
+  }
+}
 
-      &:hover {
-        background: $orange;
-        color: #111;
+@media (max-width: 600px) {
+  nav {
+    .brand {
+      h3 {
+        font-size: 1.5rem;
       }
+    }
+
+    .src-box-mobile {
+      display: inline-flex;
+      // width: 300px;
+
+      // max-width: 100%;
+      flex: 1;
+      height: 30px;
+      border-radius: 30px;
+      background-color: $gray;
+      overflow: hidden;
+      position: relative;
+
+      input {
+        width: 75%;
+        height: 100%;
+        background: white;
+        border: none;
+        outline: none;
+        padding-left: 20px;
+        font-size: 16px;
+      }
+    }
+
+    .src-icon {
+      width: 20px;
+      height: 20px;
+      top: 7px;
+      right: 3px;
     }
   }
 }

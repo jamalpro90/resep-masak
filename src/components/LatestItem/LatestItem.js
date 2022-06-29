@@ -16,7 +16,11 @@ const LatestItem = () => {
         <span className="text-icon">Mudah</span>
       </div>
 
-      <p className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, tempora.</p>
+      <p className="text">
+        Lorem ipsum dolor sit amet Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+        consequuntur suscipit dolores? Sunt voluptatem, expedita minus eaque obcaecati itaque
+        dolorum. consectetur adipisicing elit. Ex, tempora.
+      </p>
     </div>
   );
 };

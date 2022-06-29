@@ -24,3 +24,36 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .caro-wrapper {
+    max-width: 80vw;
+    margin: 7rem auto;
+
+    .slider-wrapper {
+      // Caption
+      .legend {
+        top: 50% !important;
+        left: 50% !important;
+        font-size: 2rem !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .caro-wrapper {
+    max-width: 90vw;
+    margin: 7rem auto;
+    margin-bottom: 5rem;
+
+    .slider-wrapper {
+      // Caption
+      .legend {
+        top: 45% !important;
+        left: 50% !important;
+        font-size: 1rem !important;
+      }
+    }
+  }
+}

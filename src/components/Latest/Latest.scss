@@ -16,3 +16,28 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 1024px) {
+  .la-wrapper {
+    margin-bottom: 5rem;
+    padding: $container-mobile;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .recipes {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .la-wrapper {
+    .recipes {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}

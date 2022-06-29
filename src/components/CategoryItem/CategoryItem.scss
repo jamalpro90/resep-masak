@@ -1,17 +1,18 @@
 .category-item {
   width: auto;
-  height: 200px;
+  height: auto;
   overflow: hidden;
   position: relative;
   cursor: pointer;
   // z-index: 100;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 
   img {
     width: 100%;
     filter: brightness(100%);
     transition: 0.5s;
+    object-fit: cover;
   }
 
   p {
@@ -34,6 +35,14 @@
     p {
       opacity: 1;
       top: 50%;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .category-item {
+    p {
+      font-size: 1.5rem;
     }
   }
 }

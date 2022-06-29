@@ -7,7 +7,7 @@ footer {
   .footer-top {
     padding: $container;
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -47,5 +47,31 @@ footer {
   .footer-bottom {
     text-align: center;
     padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    .footer-top {
+      justify-content: center;
+
+      .footer-item {
+        h3 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .icons {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .footer-bottom {
+      font-size: 14px;
+    }
   }
 }

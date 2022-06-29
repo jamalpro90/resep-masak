@@ -2,6 +2,7 @@
 
 .recipe {
   // width: 30%;
+  max-height: 300px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -35,3 +36,46 @@
     margin-top: 10px;
   }
 }
+
+@media (max-width: 1024px) {
+  .recipe {
+    img {
+      width: 100%;
+    }
+
+    .icons {
+      .text-icon {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .recipe {
+    max-height: 30vh;
+
+    img {
+      width: 100%;
+      // transform: scale(0.8);
+    }
+
+    .icons {
+      .text-icon {
+        margin-right: 10px;
+        font-size: 12px;
+      }
+    }
+
+    .text {
+      font-size: 14px;
+    }
+  }
+}
+
+// @media (max-width: 500px) {
+//   .recipe {
+//     max-height: 250px;
+//   }
+// }
