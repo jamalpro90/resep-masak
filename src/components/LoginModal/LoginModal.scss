@@ -1,0 +1,155 @@
+@import '../../styles/variables.scss';
+
+.back-gray {
+  position: fixed;
+  z-index: 101;
+  width: 100vw;
+  height: 100vh;
+  background: $back-gray;
+
+  .lm-wrapper {
+    width: 400px;
+    height: auto;
+    background-color: white;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    z-index: 101;
+
+    .x-icon {
+      width: 30px;
+      height: 30px;
+      padding: 7px;
+      background-color: red;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      color: white;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+
+    h3 {
+      margin: 2rem 0;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      input {
+        width: 70%;
+        padding: 10px 20px;
+        font-size: 16px;
+        outline: none;
+        border: 2px solid $gray;
+        border-radius: 30px;
+      }
+    }
+
+    .register {
+      font-size: 16px;
+      color: #333;
+      margin-top: 1rem;
+
+      span {
+        color: $purple;
+        cursor: pointer;
+        font-weight: bolder;
+      }
+    }
+
+    .or {
+      width: 100%;
+      height: 1px;
+      background-color: #333;
+      margin: 3rem 0;
+      position: relative;
+
+      span {
+        padding: 0 10px;
+        background-color: white;
+        color: #333;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+      }
+    }
+
+    .sosmed {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      li {
+        list-style: none;
+        width: 60%;
+        border: 3px solid $purple;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: bolder;
+        padding: 7px 0;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:nth-child(1):hover {
+          background-color: $green;
+          border-color: $green;
+          color: white;
+        }
+
+        &:nth-child(2):hover {
+          background-color: #222;
+          border-color: #222;
+          color: white;
+        }
+
+        &:nth-child(3):hover {
+          background-color: $blue;
+          border-color: $blue;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .back-gray .lm-wrapper {
+    width: 80vw;
+
+    .x-icon {
+      transform: scale(0.7);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    form {
+      input {
+        font-size: 14px;
+      }
+    }
+
+    .sosmed {
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+}

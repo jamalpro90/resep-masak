@@ -1,8 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import './Navbar.scss';
 import { SearchIcon, MenuIcon, XIcon } from '@heroicons/react/solid';
+import Button from '../Button/Button';
+import { modalContext } from '../../utils/Context';
 
 const Header = () => {
+  const openModal = useContext(modalContext);
   const navMobileRef = useRef(null);
 
   const handleOpenMenu = () => {
@@ -22,7 +25,7 @@ const Header = () => {
 
       {/* Search Box Mobile */}
       <div className="src-box-mobile">
-        <input type="text" name="" id="" />
+        <input type="text" placeholder="Cari Resep..." />
         <SearchIcon className="src-icon" />
       </div>
 
@@ -36,7 +39,11 @@ const Header = () => {
         <li>Favorit</li>
         <li>Produk</li>
         <li>Artikel</li>
-        <button className="btn-login">Masuk</button>
+        <Button
+          type="button"
+          text="Masuk"
+          onClick={() => openModal.dispatch({ type: 'open-login' })}
+        />
       </div>
 
       {/* Nav List */}
@@ -50,11 +57,15 @@ const Header = () => {
       {/* Search Box & Login */}
       <div className="src-box-login">
         <div className="src-box">
-          <input type="text" name="" id="" />
+          <input type="text" placeholder="Cari Resep..." />
           <SearchIcon className="src-icon" />
         </div>
 
-        <button className="btn-login">Masuk</button>
+        <Button
+          type="button"
+          text="Masuk"
+          onClick={() => openModal.dispatch({ type: 'open-login' })}
+        />
       </div>
     </nav>
   );
