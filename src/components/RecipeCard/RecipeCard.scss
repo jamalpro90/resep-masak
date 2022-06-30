@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .recipe {
-  // width: 30%;
+  // width: 100%;
   max-height: 300px;
   border-radius: 10px;
   overflow: hidden;
@@ -12,12 +12,19 @@
     transform: scale(1.1);
   }
 
-  img {
+  .img-wrapper {
     width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   .icons {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.3rem;
     margin: 5px 0;
@@ -58,7 +65,6 @@
 
     img {
       width: 100%;
-      // transform: scale(0.8);
     }
 
     .icons {
@@ -73,9 +79,3 @@
     }
   }
 }
-
-// @media (max-width: 500px) {
-//   .recipe {
-//     max-height: 250px;
-//   }
-// }

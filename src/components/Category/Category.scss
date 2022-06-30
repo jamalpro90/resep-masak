@@ -32,6 +32,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .ca-wrapper h2 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 300px) {
   .ca-wrapper {
     .categories {

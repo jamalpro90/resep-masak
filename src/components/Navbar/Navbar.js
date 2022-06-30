@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../utils/Firebase';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const openModal = useContext(modalContext);
@@ -53,7 +54,9 @@ const Header = () => {
     <nav>
       {/* Brand */}
       <div className="brand">
-        <h3>Brand</h3>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <h3>Brand</h3>
+        </Link>
       </div>
 
       {/* Search Box Mobile */}

@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import RecipeCard from '../RecipeCard/RecipeCard';
-import './Latest.scss';
+import './RecipeCategoryContent.scss';
 
-const Latest = () => {
+const RecipeCategoryContent = () => {
+  const { key } = useParams();
   const [datas, setDatas] = useState(null);
 
+  // console.log(data);
+
   useEffect(() => {
-    fetch('https://masak-apa-tomorisakura.vercel.app/api/recipes-length/?limit=9')
+    fetch(`https://masak-apa-tomorisakura.vercel.app/api/category/recipes/${key}`)
       .then((res) => res.json())
       .then((data) => setDatas(data.results));
   }, []);
 
+  if (!datas) return null;
+
   return (
-    <div className="la-wrapper">
-      {/* Heading */}
-      <h2>Terbaru</h2>
+    <div className="rcc-wrapper">
+      {/* Title */}
+      <h2>{key.replace(/-/, ' ').toUpperCase()}</h2>
 
       {/* Recipes */}
       <div className="recipes">
@@ -25,4 +31,4 @@ const Latest = () => {
   );
 };
 
-export default Latest;
+export default RecipeCategoryContent;

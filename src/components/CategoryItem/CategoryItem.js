@@ -1,13 +1,17 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './CategoryItem.scss';
+import { Link } from 'react-router-dom';
 
-const CategoryItem = () => {
+const CategoryItem = ({ data }) => {
   return (
-    <div className="category-item">
-      <img src="http://placeimg.com/640/480/nature" />
+    <Link to={`/resep-masakan/${data.key}`}>
+      <div className="category-item">
+        <img src={`/img/${data.key}.jpg`} />
 
-      <p className="text">Makan</p>
-    </div>
+        <p className="text">{data.category}</p>
+      </div>
+    </Link>
   );
 };
 
