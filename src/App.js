@@ -8,6 +8,7 @@ import { modalContext } from './utils/Context';
 import { useContext } from 'react';
 import LoginModal from './components/LoginModal/LoginModal';
 import RecipeCategory from './pages/RecipeCategory';
+import RecipeSearchResults from './pages/RecipeSearchResults';
 
 const App = () => {
   const openModal = useContext(modalContext);
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="resep/:key" element={<RecipeDetail />} />
         <Route path="resep-masakan/:key" element={<RecipeCategory />} />
+        <Route path="cari-resep/:key" element={<RecipeSearchResults />} />
       </Routes>
     </div>
   );

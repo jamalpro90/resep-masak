@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ToastContainer } from 'react-toastify';
 import Carousel from '../components/Carousel/Carousel';
 import Category from '../components/Category/Category';

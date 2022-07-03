@@ -7,12 +7,14 @@ import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../utils/Firebase';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const openModal = useContext(modalContext);
   const navMobileRef = useRef(null);
   const [user, setUser] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -50,6 +52,16 @@ const Header = () => {
       });
   };
 
+  // Cari resep
+  const handleSearchValue = (e) => {
+    e.preventDefault();
+
+    // alert(searchValue);
+    navigate(`/cari-resep/${searchValue}`, { replace: true });
+    setSearchValue('');
+    location.reload();
+  };
+
   return (
     <nav>
       {/* Brand */}
@@ -60,10 +72,15 @@ const Header = () => {
       </div>
 
       {/* Search Box Mobile */}
-      <div className="src-box-mobile">
-        <input type="text" placeholder="Cari Resep..." />
-        <SearchIcon className="src-icon" />
-      </div>
+      <form className="src-box-mobile" onSubmit={handleSearchValue}>
+        <input
+          type="text"
+          placeholder="Cari Resep..."
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <SearchIcon className="src-icon" onClick={handleSearchValue} />
+      </form>
 
       {/* Ham Menu Mobile */}
       <MenuIcon className="ham-icon" onClick={handleOpenMenu} />
@@ -97,10 +114,15 @@ const Header = () => {
 
       {/* Search Box & Login */}
       <div className="src-box-login">
-        <div className="src-box">
-          <input type="text" placeholder="Cari Resep..." />
-          <SearchIcon className="src-icon" />
-        </div>
+        <form className="src-box" onSubmit={handleSearchValue}>
+          <input
+            type="text"
+            placeholder="Cari Resep..."
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          <SearchIcon className="src-icon" onClick={handleSearchValue} />
+        </form>
 
         {user ? (
           <div>
