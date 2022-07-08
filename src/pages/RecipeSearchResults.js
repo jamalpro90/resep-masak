@@ -18,6 +18,8 @@ function RecipeSearchResults() {
   // console.log(data);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     fetch(`https://masak-apa-tomorisakura.vercel.app/api/search/?q=${key}`)
       .then((res) => res.json())
       .then((data) => setDatas(data.results));

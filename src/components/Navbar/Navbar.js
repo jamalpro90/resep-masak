@@ -17,9 +17,6 @@ const Header = () => {
   const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
 
-  // const [searchParams, setSearchParams] = useSearchParams();
-  // const searchTerm = searchParams.get('search') || '';
-
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -60,17 +57,10 @@ const Header = () => {
   const handleSearchValue = (e) => {
     e.preventDefault();
 
-    // alert(searchValue);
     navigate(`/cari-resep/${searchValue}`, { replace: true });
     setSearchValue('');
     location.reload();
   };
-
-  // const handleSearch = (e) => {
-  //   const search = e.target.value;
-
-  //   search ? setSearchParams({ search }) : setSearchParams({});
-  // };
 
   return (
     <nav>

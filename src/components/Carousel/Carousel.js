@@ -13,20 +13,20 @@ const Carousel = () => {
         infiniteLoop={true}
         showStatus={false}>
         <div>
-          <img src="http://placeimg.com/640/480/animals" />
-          <p className="legend">Animal</p>
+          <img src="/img/sarapan.jpg" />
+          <p className="legend">Sarapan</p>
         </div>
         <div>
-          <img src="http://placeimg.com/640/480/nature" />
-          <p className="legend">Nature</p>
+          <img src="/img/resep-sayuran.jpg" />
+          <p className="legend">Sayuran</p>
         </div>
         <div>
-          <img src="http://placeimg.com/640/480/people" />
-          <p className="legend">People</p>
+          <img src="/img/resep-ayam.jpg" />
+          <p className="legend">Ayam</p>
         </div>
         <div>
-          <img src="http://placeimg.com/640/480/nature" />
-          <p className="legend">Nature</p>
+          <img src="/img/resep-dessert.jpg" />
+          <p className="legend">Dessert</p>
         </div>
       </CaroWrapper>
     </div>

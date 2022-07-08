@@ -11,9 +11,11 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
 
     .footer-item {
+      margin: 1rem;
+      text-align: center;
+
       h3 {
         font-size: 24px;
         margin-bottom: 1rem;
@@ -34,7 +36,12 @@ footer {
       .icons {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          margin: 0.3rem;
+        }
 
         a .icon {
           width: 5px;
