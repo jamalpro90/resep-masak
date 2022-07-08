@@ -11,6 +11,9 @@ function RecipeSearchResults() {
   const params = useParams();
   const [datas, setDatas] = useState(null);
   const { key } = params;
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // console.log(searchParams);
+  console.log(key);
 
   // console.log(data);
 

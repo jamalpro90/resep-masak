@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import './Navbar.scss';
 import { SearchIcon, MenuIcon, XIcon } from '@heroicons/react/solid';
@@ -15,6 +16,9 @@ const Header = () => {
   const [user, setUser] = useState(null);
   const [searchValue, setSearchValue] = useState('');
   const navigate = useNavigate();
+
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const searchTerm = searchParams.get('search') || '';
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -61,6 +65,12 @@ const Header = () => {
     setSearchValue('');
     location.reload();
   };
+
+  // const handleSearch = (e) => {
+  //   const search = e.target.value;
+
+  //   search ? setSearchParams({ search }) : setSearchParams({});
+  // };
 
   return (
     <nav>
